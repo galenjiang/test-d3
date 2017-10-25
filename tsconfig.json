@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "target": "es5",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "typeRoots": [
+      "@types",
+      "./typings"
+    ]
+  },
+  "files": [
+    "typings/globals.d.ts",
+    "src/app.ts"
+  ],
+  "include": [
+    "./src/**/*"
+  ]
+}
