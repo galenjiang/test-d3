@@ -1,11 +1,11 @@
 import * as page from 'page'
 import * as Handlebars from 'handlebars'
-import * as seal from './img/seal.jpg'
+import * as circleAndRect from './img/circle-and-rect.jpg'
 const template = `
 <div class="container">
   <div class="card-columns">
     <div class="card">
-      <img class="card-img-top" src="${seal}" alt="Card image cap">
+      <img class="card-img-top" src="${circleAndRect}" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title">Circle and Rect</h4>
         <p class="card-text">园和矩形的定位</p>

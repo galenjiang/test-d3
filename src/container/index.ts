@@ -12,12 +12,14 @@ function init() {
   page({
     hashbang: false,
   })
-  page('/', (ctx, next) => {
+  page((ctx, next) => {
     container.innerHTML = ''
+    next()
+  })
+  page('/', (ctx, next) => {
     homeInit()
   })
   page('/circle-and-rect', (ctx, next) => {
-    container.innerHTML = ''
     circleAndRectInit()
   })
   page('*', () => {
