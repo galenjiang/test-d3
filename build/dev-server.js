@@ -2,6 +2,7 @@
 const express = require('express')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const history = require('connect-history-api-fallback');
 const webpack = require('webpack')
 const path = require('path')
 const chalk = require('chalk')
@@ -9,8 +10,8 @@ const devConfig = require('./webpack.dev.conf')
 
 const app = express()
 const compiler = webpack(devConfig)
+app.use(history())
 app.use(webpackDevMiddleware(compiler, {
-    publicPath: '/',
     contentBase: path.join(__dirname, '../server'),
     stats: {
       colors: true,

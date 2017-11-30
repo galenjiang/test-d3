@@ -17,7 +17,6 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, isDevelopment ? '../server' : '../dist'),
-    publicPath: '/',                                                               // default ''
     filename: isDevelopment ? '[name].js' : '[name]-[hash:4].js',
     chunkFilename: isDevelopment ? '[id].chunk.js' : '[name]-[hash:4].js'
   },

@@ -33,7 +33,6 @@ module.exports = merge(baseConfig, {
     contentBase: path.join(__dirname, '../server'),
     historyApiFallback: true,
     hot: true,
-    publicPath: '/',
   }
 })
 

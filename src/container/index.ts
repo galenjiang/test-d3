@@ -2,8 +2,9 @@ import * as page from 'page'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/css/reset.css'
 import './style.css'
-import circleAndRectInit from '../components/CircleAndRect'
 import homeInit from '../components/Home'
+import CircleAndRect from '../components/CircleAndRect'
+import SvgBar from '../components/SvgBar'
 
 
 function init() {
@@ -20,12 +21,15 @@ function init() {
     homeInit()
   })
   page('/circle-and-rect', (ctx, next) => {
-    circleAndRectInit()
+    CircleAndRect()
+  })
+  page('/svg-bar', (ctx, next) => {
+    SvgBar()
   })
   page('*', () => {
     container.innerHTML = 'not found!!!!!!'
   })
-  page('/')
+  page(location.pathname)
 }
 
 export default init
