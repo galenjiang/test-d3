@@ -38,6 +38,10 @@ module.exports = {
         use: 'awesome-typescript-loader',
         exclude: /node_modules/
       },
+      {
+        test: /\.html$/,
+        use: 'raw-loader'
+      },
 
       {
         test: /\.(png|jpg|gif)$/,
