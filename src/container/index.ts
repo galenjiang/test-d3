@@ -1,27 +1,29 @@
-import * as d3 from 'd3'
-import '../css/reset.css'
+import * as page from 'page'
+import 'bootstrap/dist/css/bootstrap.css'
+import '../assets/css/reset.css'
 import './style.css'
+import circleAndRectInit from '../components/CircleAndRect'
+import homeInit from '../components/Home'
+
 
 function init() {
-  const container = document.getElementById('app')
-  const width = (container as HTMLElement).offsetWidth
-  const height = (container as HTMLElement).offsetHeight
-  const context = d3.select(container).append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('preserveAspectRatio', 'xMidYMid meet')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-  context.append('rect')
-    .attr('width', 600)
-    .attr('height',300)
-    .attr('transform', `translate(${width / 2}, ${height / 2})`)
-    .attr('fill', 'red')
-  context.append('circle')
-    .attr('r', '100px')
-    .attr('rx', '0')
-    .attr('ry', '0')
-    .attr('transform', `translate(${width / 2}, ${height / 2})`)
-    .attr('fill', 'green')
+  const container: HTMLElement = document.getElementById('app') as any
+
+  page({
+    hashbang: false,
+  })
+  page('/', (ctx, next) => {
+    container.innerHTML = ''
+    homeInit()
+  })
+  page('/circle-and-rect', (ctx, next) => {
+    container.innerHTML = ''
+    circleAndRectInit()
+  })
+  page('*', () => {
+    container.innerHTML = 'not found!!!!!!'
+  })
+  page('/')
 }
 
 export default init

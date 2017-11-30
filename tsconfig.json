@@ -8,6 +8,7 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
+    "allowJs": true,
     "types": [
       "node"
     ],
